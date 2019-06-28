@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+<!-- 配置数据源 -->
+	<bean id="DataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName">
+			<value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:sqlserver://localhost:1433;databaseName=zf</value>
+		</property>
+		<property name="username">
+			<value>sa</value>
+		</property>
+		<property name="password">
+			<value>123</value>
+		</property>
+	</bean>
+
+	
+</beans>

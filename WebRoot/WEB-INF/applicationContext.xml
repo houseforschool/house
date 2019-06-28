@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 导入数据源配置文件 -->
+	<import resource="applicationContext-dataSource.xml" />
+	<!-- 导入Dao配置文件 -->
+	<import resource="applicationContext-dao.xml" />
+	<!-- 导入Service配置文件 -->
+	<import resource="applicationContext-services.xml" />
+	<!-- 导入action配置文件 -->
+	<import resource="applicationContext-action.xml" />
+
+	<!-- 配置sessionFactory -->
+	<bean id="SessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="DataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+
+
+		<!-- Hiernate实体映射文件 -->
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>/WEB-INF/hbm</value>
+			</list>
+		</property>
+	</bean>
+</beans>
