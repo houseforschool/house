@@ -62,7 +62,11 @@
 		</br>
 		<td><strong>地段：</strong>${tblQx.qx}&nbsp;&nbsp;${tblJd.jd}</td>
 		</br>
-		<td><strong>发布时间：</strong> ${tblFwxx.date}</td></br>
+		<td><strong>发布时间：</strong> ${tblFwxx.date}</td>
+	        </br>
+		<td><strong>电梯：</strong> xxxx</td>
+                </br>
+		<td><strong>折旧信息：</strong> xxxxxx</td></br>
 	 
     </div>
     <div class="xun-car">
